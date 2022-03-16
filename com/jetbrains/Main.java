@@ -38,10 +38,18 @@ public class Main {
         int value;
 //        scanner.nextLine();
         optionsUtilities = scanner.nextLine();
-        if(optionsUtilities.length()>0 && optionsUtilities.contains("4")){
-            System.out.printf("Wrong option chosen we will remind you later");
+        while(true){
+            if(optionsUtilities.length()>1 && optionsUtilities.contains("4")){
+                System.out.println("Wrong option chosen,,,Please enter a valid input");
+                System.out.println("1.Diary service\n2.Watchman service\n3.Plumber service\n4.None");
+                optionsUtilities = scanner.nextLine();
+
+            }
+            else{
+                break;
+            }
         }
-        else{
+
             for(int i=0;i<optionsUtilities.length();i++){
                 if(i%2==0){
                     value = Integer.parseInt(optionsUtilities.charAt(i)+"");
@@ -69,7 +77,7 @@ public class Main {
 
                 }
             }
-        }
+
 
 
 
@@ -83,11 +91,18 @@ public class Main {
         int val;
 //        scanner.nextLine();
         optionsNotifications = scanner.nextLine();
-        if(optionsNotifications.length()>0 && optionsNotifications.contains("4")){
-            System.out.printf("Wrong option chosen we will remind you later");
+        Notificationservice notificationservice;
+        while(true){
+
+            if(optionsNotifications.length()>1 && optionsNotifications.contains("4")){
+                System.out.println("Wrong option chosen Please select a valid input");
+                System.out.println("1.Email\n2.SMS\n3.WhatsApp\n4.None");
+                optionsNotifications = scanner.nextLine();
+            }
+            else{
+                break;
         }
-        else{
-            Notificationservice notificationservice;
+
             for(int i=0;i<optionsNotifications.length();i++){
                 if(i%2==0){
                     val =Integer.parseInt(optionsNotifications.charAt(i)+"");

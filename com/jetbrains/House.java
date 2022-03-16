@@ -15,35 +15,33 @@ public class House {
 
     void addHome(){
         HouseList[] arr = new HouseList[8];
-//        HouseList one,two,three,four,a,b,c,d;
+
+
         arr[0] = new HouseList();
         arr[0].addHome("Residence one","owner1",4000, 1);
-//        ll.put("khammam",arr[0]);
         list1.add(arr[0]);
         arr[1] = new HouseList();
         arr[1].addHome("Residence 2","owner 2",5000, 2);
-//        ll.put("khammam",arr[1]);
         list1.add(arr[1]);
         arr[2] = new HouseList();
         arr[2].addHome("Residence 3","owner 3",3000, 3);
-//        ll.put("khammam",arr[2]);
         list1.add(arr[2]);
         arr[3] = new HouseList();
         arr[3].addHome("Residence 4","owner 4",9000, 4);
-//        ll.put("khammam",arr[3]);
         list1.add(arr[3]);
+
+
         arr[4] = new HouseList();
         arr[4].addHome("Residence a","owner a",9000, 1);
         list2.add(arr[4]);
-//        ll.put("wyra",arr[4]);
         arr[5] = new HouseList();
         arr[5].addHome("Residence b","owner b",3000, 2);
-//        ll.put("wyra",arr[5]);
         list2.add(arr[5]);
         arr[6] = new HouseList();
         arr[6].addHome("Residence c","owner c",5000, 3);
-//        ll.put("wyra",arr[6]);
         list2.add(arr[6]);
+
+
         ll.put("khammam",list1);
         ll.put("wyra",list2);
     }
@@ -55,7 +53,6 @@ public class House {
             if(entry.getKey().equals(address)){
                 addressFlag = true;
                 System.out.println("Below are the list of houses :");
-//                HouseList homo = entry.getValue();
                 for(HouseList houseList : entry.getValue()){
                     System.out.println("Id: "+houseList.getId()+"\nHome Name: "+houseList.getHouseName()+"\nOwner Name: "+houseList.getOwnerName()+"\nRent is: "+houseList.getRent());
                     System.out.println();
@@ -74,34 +71,20 @@ public class House {
         for(Map.Entry<String, ArrayList<HouseList>> entry : ll.entrySet()){
 
             if(entry.getKey().equals(address)){
-//                HouseList homo = entry.getValue();
                 for(HouseList houseList : entry.getValue()){
                     if(houseList.getId()==option) {
                         System.out.println("Id: " + houseList.getId() + "\nHome Name: " + houseList.getHouseName() + "\nOwner Name: " + houseList.getOwnerName() + "\nRent is: " + houseList.getRent());
+                        System.out.println("This house is selected");
                         System.out.println();
                         cost = houseList.getRent();
                         idFlag = true;
                     }
                 }
             }
-            if(idFlag==false){
-                System.out.println("Invalid Id....\n Exiting");
-                System.exit(1);
-            }
         }
 
-
-//        for(HouseList houseList : list){
-//            if (houseList.getId()==option) {
-//                System.out.println("Id: "+houseList.getId()+"\nHome Name: "+houseList.getHouseName()+"\nOwner Name: "+houseList.getOwnerName()+"\nRent is: "+houseList.getRent());
-//                System.out.println("This house is selected");
-//                cost= houseList.getRent();
-//            }
-//        }
         System.out.println();
         return cost;
-//        address;
-        //shows a list of houses.... logic
     }
 
 
