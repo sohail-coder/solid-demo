@@ -4,8 +4,10 @@ public class EmailNotificationService implements Notificationservice {
 
 
     @Override
-    public void sendRentRemainder() {
+    public String sendRentRemainder() {
         System.out.println("Rent Remainder sent using Email");
+        return "";
+
     }
 
 }

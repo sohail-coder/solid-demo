@@ -3,7 +3,8 @@ package com.jetbrains.notifications;
 public class MobileNotificationService implements Notificationservice {
 
     @Override
-    public void sendRentRemainder() {
+    public String sendRentRemainder() {
         System.out.println("Rent Notification sent using SMS");
+        return "";
     }
 }

@@ -11,7 +11,7 @@ public class SendNotification implements Notificationservice{
 
 
     @Override
-    public void sendRentRemainder() {
-    notificationservice.sendRentRemainder();
+    public String sendRentRemainder() {
+    return notificationservice.sendRentRemainder();
     }
 }

@@ -36,7 +36,6 @@ public class Main {
         System.out.println("1.Diary service\n2.Watchman service\n3.Plumber service\n4.None");
         String optionsUtilities;
         int value;
-//        scanner.nextLine();
         optionsUtilities = scanner.nextLine();
         while(true){
             if(optionsUtilities.length()>1 && optionsUtilities.contains("4")){
@@ -87,37 +86,38 @@ public class Main {
         System.out.println("would you like us to send you remainders of rent payment");
         System.out.println("Choose any one option from the below mentioned methods");
         System.out.println("1.Email\n2.SMS\n3.WhatsApp\n4.None");
-        String optionsNotifications;
         int val;
-//        scanner.nextLine();
-        optionsNotifications = scanner.nextLine();
-        Notificationservice notificationservice;
-        while(true){
 
-            if(optionsNotifications.length()>1 && optionsNotifications.contains("4")){
+        String optionsNotifications = scanner.nextLine();
+        Notificationservice notificationService;
+        while(true) {
+
+            if (optionsNotifications.length() > 1 && optionsNotifications.contains("4")) {
                 System.out.println("Wrong option chosen Please select a valid input");
                 System.out.println("1.Email\n2.SMS\n3.WhatsApp\n4.None");
                 optionsNotifications = scanner.nextLine();
-            }
-            else{
+            } else {
                 break;
+            }
         }
 
-            for(int i=0;i<optionsNotifications.length();i++){
+            System.out.println(optionsNotifications);
+            System.out.println();
+            for(int i = 0; !(i >= optionsNotifications.length()); i++){
                 if(i%2==0){
                     val =Integer.parseInt(optionsNotifications.charAt(i)+"");
                     switch (val){
                         case 1:
-                            notificationservice  = new EmailNotificationService();
-                            notificationservice.sendRentRemainder();
+                            notificationService  = new EmailNotificationService();
+                            notificationService.sendRentRemainder();
                             break;
                         case 2:
-                            notificationservice = new MobileNotificationService();
-                            notificationservice.sendRentRemainder();
+                            notificationService = new MobileNotificationService();
+                            notificationService.sendRentRemainder();
                             break;
                         case 3:
-                            notificationservice = new WhatsAppNotificationService();
-                            notificationservice.sendRentRemainder();
+                            notificationService = new WhatsAppNotificationService();
+                            notificationService.sendRentRemainder();
                             break;
                         case 4:
                             System.out.println("None selected");
@@ -129,8 +129,7 @@ public class Main {
                     }
                 }
             }
-        }
-        System.out.println();
+
 
 
 
